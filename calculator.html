@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #222222;">
+    <div class="container-fluid">
+        <div class="form-group" style="width: 610px;border: 5px solid black;">
+            <div style="float: left;">
+                <input type="text" class="form-control" id="first" placeholder="first number" style="font-size: larger;text-align: center;width: 275px;" />
+            </div>
+            <div style="float: left;width: 50px;">
+                <input type="text" class="form-control" id="op" style="font-size: larger;text-align: center;width: 50px;"/>
+            </div>
+            <div>
+                <input type="text" class="form-control" id="second" placeholder="second number" style="font-size: larger;text-align: center;width: 275px;" />
+            </div>
+            <div style="margin-top: 5px;">
+                <input type="text" class="form-control" id="ans" placeholder="answer" style="font-size: larger;text-align: center;width: 600px;" />
+            </div>
+        </div>
+        <div style="float: left;padding-top: 2px;">
+            <div>
+                <div class="btn-group" style="border: 1px solid;">
+                    <button id="b7" onclick="setText('b7');" type="button" class="btn btn-primary" style="width: 120px; height: 100px; font-size:x-large ;">7</button>
+                    <button id="b8" onclick="setText('b8')" type="button" class="btn btn-primary" style="width: 120px; height: 100px;font-size:x-large ;margin-left: 2px;">8</button>
+                    <button id="b9" onclick="setText('b9')" type="button" class="btn btn-primary" style="width: 120px;height: 100px;font-size:x-large ;margin-left: 2px;">9</button>
+                    <button id="mod" onclick="setOp('mod')" type="button" class="btn btn-warning" style="width: 120px;height: 100px;font-size:x-large ;margin-left: 2px;">%</button>
+
+                </div>
+            </div>
+
+            <div>
+                <div class="btn-group" style="border: 1px solid;font-size: larger;">
+                    <button id="b4" onclick="setText('b4')" type="button" class="btn btn-primary" style="width: 120px;height: 100px;font-size:x-large ;">4</button>
+                    <button id="b5" onclick="setText('b5')" type="button" class="btn btn-primary" style="width: 120px;height: 100px;font-size:x-large; margin-left: 2px;">5</button>
+                    <button id="b6" onclick="setText('b6')" type="button" class="btn btn-primary" style="width: 120px;height: 100px;font-size:x-large; margin-left: 2px;">6</button>
+                    <button id="mul" onclick="setOp('mul')" type="button" class="btn btn-warning" style="width: 120px;height: 100px;font-size:x-large ;margin-left: 2px;">x</button>
+                    
+                </div>
+            </div>
+            
+            <div>
+                <div class="btn-group" style="border: 1px solid;font-size: larger;">
+                    <button id="b1" onclick="setText('b1')" type="button" class="btn btn-primary" style="width: 120px;height: 100px;font-size:x-large ;">1</button>
+                    <button id="b2" onclick="setText('b2')" type="button" class="btn btn-primary" style="width: 120px;height: 100px;font-size:x-large ;margin-left: 2px;">2</button>
+                    <button id="b3" onclick="setText('b3')" type="button" class="btn btn-primary" style="width: 120px;height: 100px;font-size:x-large ;margin-left: 2px;">3</button>
+                    <button id="divd" onclick="setOp('divd')" type="button" class="btn btn-warning" style="width: 120px;height: 100px;font-size:x-large ;margin-left: 2px;">/</button>
+                </div>
+            </div>
+            <div>
+                <div class="btn-group" style="border: 1px solid;font-size: larger;">
+                    <button id="b0" onclick="setText('b0')" type="button" class="btn btn-primary" style="width: 242px;height: 100px;font-size:x-large ;">0</button>
+                    <button id="bd" onclick="setText('bd')" type="button" class="btn btn-primary" style="width: 120px;height: 100px;font-size:x-large ;margin-left: 2px;">.</button>
+                    <button type="button" id="sub" onclick="setOp('sub')" class="btn btn-warning" style="width: 120px;height: 100px;font-size:x-large ;margin-left: 2px;">-</button>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <div class="btn-group" style="border: 1px solid;font-size: larger;position: relative;padding-top: 2px;">
+                <div>
+                    <button  id="CE" onclick="clean()" type="button" class="btn btn-danger" style="width: 120px;height: 100px;font-size:x-large ;margin-left: 2px;">CE</button>
+                </div>
+                <div style="position: absolute;left: 0px;top:102px">
+                    <button type="button" id="add" onclick="setOp('add')" class="btn btn-warning" style="width: 120px;height: 202px;font-size:x-large ; margin-top:2px;margin-left: 2px;">+</button>
+                </div>   
+                <div style="position: absolute;left: 0px;top:306px">
+                    <button type="button" id="ans" onclick="ans()" class="btn btn-success" style="width: 120px;height: 100px;font-size:x-large ;margin-left: 2px;margin-top: 2px;">=</button>     
+                </div> 
+            </div>
+        </div>
+    </div>
+</body>
+<script src="calc.js"></script>
+</html>
